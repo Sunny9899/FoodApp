@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Of Day</title>
+</head>
+
+<link rel="stylesheet" href="./styleFood/style.css" />
+
+
+<body>
+    <div id="navbar"></div>    
+    <div id="contain"></div>
+    
+    <script type="module">
+     //Navbar
+    import Navbar from './components/navbarFood.js'
+    
+    let navbar_main=document.getElementById("navbar");
+    
+    navbar_main.innerHTML=Navbar();
+    
+    //Showing the data 
+    import{getFoodData,appendFood} from './scripts/showFood.js';
+    
+    function show(){
+    let res=getFoodData(`https://www.themealdb.com/api/json/v1/1/random.php`)
+    res.then((r)=>{
+    //console.log(r.meals);
+       
+    let contain=document.getElementById("contain");
+    contain.innerHTML=null; 
+    appendFood(r.meals,contain);
+    
+    })
+    res.catch((e)=>{
+    console.log(e);
+    })
+    }
+    show();
+   
+    let srch=document.getElementById("search");// to make sure no input gets into this page
+    srch.addEventListener("click",homepage);
+    function homepage(){
+        window.location.href="search.html";
+    }
+    </script>    
+    
+    </body>
+</html>
