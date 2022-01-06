@@ -7,7 +7,7 @@
     <title>Recipe Of Day</title>
 </head>
 
-<link rel="stylesheet" href="./styleFood/style.css" />
+<link rel="stylesheet" href="./style.css" />
 
 
 <body>
@@ -16,14 +16,14 @@
     
     <script type="module">
      //Navbar
-    import Navbar from './components/navbarFood.js'
+    import Navbar from './navbarFood.js'
     
     let navbar_main=document.getElementById("navbar");
     
     navbar_main.innerHTML=Navbar();
     
     //Showing the data 
-    import{getFoodData,appendFood} from './scripts/showFood.js';
+    import{getFoodData,appendFood} from './showFood.js';
     
     function show(){
     let res=getFoodData(`https://www.themealdb.com/api/json/v1/1/random.php`)

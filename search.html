@@ -7,7 +7,7 @@
     <title>Search</title>
 </head>
 
-<link rel="stylesheet" href="./styleFood/style.css" />
+<link rel="stylesheet" href="./style.css" />
 
 <body>
 <div id="navbar"></div>    
@@ -15,14 +15,14 @@
 
 <script type="module">
  //Navbar
-import Navbar from './components/navbarFood.js'
+import Navbar from './navbarFood.js'
 
 let navbar_main=document.getElementById("navbar");
 
 navbar_main.innerHTML=Navbar();
 
 //Showing the data
-import{getFoodData,appendFood} from './scripts/showFood.js';
+import{getFoodData,appendFood} from './showFood.js';
 
 
 var searchFood=document.getElementById("search");
